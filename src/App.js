@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { Navbar, Footer, Sidebar } from "./components";
 import {
   Home,
   About,
@@ -13,6 +14,7 @@ import {
 function App() {
   return (
     <Router>
+      <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
@@ -22,6 +24,7 @@ function App() {
         <Route path="/checkout" element={<Checkout />} />
         <Route path="*" element={<ErrorPage />} />
       </Routes>
+      <Footer />
     </Router>
   );
 }
