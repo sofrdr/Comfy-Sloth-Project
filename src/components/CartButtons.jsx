@@ -1,5 +1,6 @@
 import React from "react";
 import { FaShoppingCart, FaUserMinus, FaUserPlus } from "react-icons/fa";
+import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 
@@ -56,18 +57,20 @@ const Wrapper = styled.div`
 `;
 
 const CartButtons = () => {
+  const { amount } = useSelector((state) => state.cart);
+  const { isLoggedIn } = useSelector((state) => state.user);
   return (
     <Wrapper className="cart-btn-wrapper">
       <Link className="cart-btn" to="/cart">
         Cart
         <span className="cart-container">
           <FaShoppingCart />
-          <span className="cart-value">0</span>
+          <span className="cart-value">{amount}</span>
         </span>
       </Link>
       <button className="auth-btn" type="button">
-        Login
-        <FaUserPlus />
+        {isLoggedIn ? "Logout" : "Login"}
+        {isLoggedIn ? <FaUserMinus /> : <FaUserPlus />}
       </button>
     </Wrapper>
   );
