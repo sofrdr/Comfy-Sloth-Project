@@ -4,6 +4,7 @@ import { links } from "../utils/constants";
 import { FaBars } from "react-icons/fa";
 import styled from "styled-components";
 import logo from "../assets/logo.svg";
+import CartButtons from "./CartButtons";
 
 const NavContainer = styled.nav`
   height: 90px;
@@ -95,6 +96,7 @@ const Navbar = () => {
             );
           })}
         </ul>
+        <CartButtons />
       </div>
     </NavContainer>
   );
