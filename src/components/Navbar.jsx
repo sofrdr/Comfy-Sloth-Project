@@ -1,10 +1,12 @@
-import React from "react";
+import { React, useState } from "react";
 import { Link } from "react-router-dom";
 import { links } from "../utils/constants";
 import { FaBars } from "react-icons/fa";
 import styled from "styled-components";
 import logo from "../assets/logo.svg";
 import CartButtons from "./CartButtons";
+import { useDispatch, useSelector } from "react-redux";
+import { toggleSideBar } from "../features/productsSlice";
 
 const NavContainer = styled.nav`
   height: 90px;
@@ -75,6 +77,8 @@ const NavContainer = styled.nav`
 `;
 
 const Navbar = () => {
+  const { isSideBarOpen } = useSelector((state) => state.products);
+  const dispatch = useDispatch();
   return (
     <NavContainer>
       <div className="nav-center">
@@ -82,7 +86,11 @@ const Navbar = () => {
           <Link to="/">
             <img src={logo} alt="logo" />
           </Link>
-          <button className="nav-toggle" type="button">
+          <button
+            className="nav-toggle"
+            type="button"
+            onClick={() => dispatch(toggleSideBar({ actionType: "open" }))}
+          >
             <FaBars />
           </button>
         </div>

@@ -27,8 +27,8 @@ const Footer = () => {
   return (
     <FooterContainer>
       <p>
-        © 2023
-        <span>ComfySloth</span>
+        &copy; {new Date().getFullYear()}
+        <span> ComfySloth</span>
       </p>
       <p>All rights reserved</p>
     </FooterContainer>
