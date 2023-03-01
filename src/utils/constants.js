@@ -34,7 +34,7 @@ export const services = [
   {
     id: 3,
     icon: <GiStabbedNote />,
-    title: "history",
+    title: "histoire",
     text: "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptates, ea. Perferendis corrupti reiciendis nesciunt rerum velit autem unde numquam nisi",
   },
 ];

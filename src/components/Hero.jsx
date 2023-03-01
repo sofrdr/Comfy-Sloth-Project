@@ -69,7 +69,7 @@ const Hero = () => {
     <Wrapper className="section-center">
       <article className="content">
         <h1>
-          Créer votre <br /> espace de confort
+          Créez votre <br /> espace de confort
         </h1>
         <p>
           Lorem ipsum dolor sit amet consectetur, adipisicing elit. Iusto
