@@ -16,6 +16,7 @@ const Wrapper = styled.div`
     color: var(--clr-grey-1);
     display: flex;
     align-items: center;
+    margin-right: 25px;
   }
   .cart-container {
     display: flex;
@@ -62,7 +63,7 @@ const CartButtons = () => {
   return (
     <Wrapper className="cart-btn-wrapper">
       <Link className="cart-btn" to="/cart">
-        Cart
+        Panier
         <span className="cart-container">
           <FaShoppingCart />
           <span className="cart-value">{amount}</span>
