@@ -10,9 +10,15 @@ import {
   Checkout,
   ErrorPage,
 } from "./pages";
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { useDispatch } from "react-redux";
+import { getProductsItems } from "./features/productsSlice";
 
 function App() {
+  const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch(getProductsItems());
+  }, []);
   return (
     <Router>
       <Navbar />
