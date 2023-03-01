@@ -1,7 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
-  isSideBarOpen: true,
+  isSideBarOpen: false,
 };
 
 const productsSlice = createSlice({
