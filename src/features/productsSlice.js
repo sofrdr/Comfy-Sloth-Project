@@ -4,7 +4,9 @@ import { products_url } from "../utils/constants";
 const initialState = {
   isSideBarOpen: false,
   productsItems: [],
-  isLoading: true,
+  productsLoading: true,
+  productsError: false,
+  featuredProducts: [],
 };
 
 export const getProductsItems = createAsyncThunk(
@@ -37,15 +39,18 @@ const productsSlice = createSlice({
   extraReducers: (builder) => {
     builder
       .addCase(getProductsItems.pending, (state) => {
-        state.isLoading = true;
+        state.productsLoading = true;
       })
       .addCase(getProductsItems.fulfilled, (state, action) => {
-        console.log(action);
         state.productsItems = action.payload;
-        state.isLoading = false;
+        const featured = action.payload.filter(
+          (product) => product.featured === true
+        );
+        state.featuredProducts = featured;
+        state.productsLoading = false;
       })
       .addCase(getProductsItems.rejected, (state) => {
-        state.isLoading = true;
+        state.productsLoading = true;
       });
   },
 });
