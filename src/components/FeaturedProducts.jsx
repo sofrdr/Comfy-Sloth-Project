@@ -2,6 +2,8 @@ import React from "react";
 import styled from "styled-components";
 import { useSelector } from "react-redux";
 import Product from "./Product";
+import Loading from "./Loading";
+import Error from "./Error";
 
 const Wrapper = styled.section`
   background: var(--clr-grey-10);
@@ -27,7 +29,17 @@ const Wrapper = styled.section`
 `;
 
 const FeaturedProducts = () => {
-  const { featuredProducts } = useSelector((state) => state.products);
+  const { featuredProducts, productsError, productsLoading } = useSelector(
+    (state) => state.products
+  );
+
+  if (productsError) {
+    return <Error />;
+  }
+  if (productsLoading) {
+    return <Loading />;
+  }
+
   return (
     <Wrapper className="section">
       <div className="title">
