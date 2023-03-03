@@ -51,6 +51,7 @@ const productsSlice = createSlice({
       })
       .addCase(getProductsItems.rejected, (state) => {
         state.productsLoading = true;
+        state.productsError = true;
       });
   },
 });

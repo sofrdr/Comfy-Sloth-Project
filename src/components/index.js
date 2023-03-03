@@ -5,6 +5,7 @@ import Footer from "./Footer";
 import Hero from "./Hero";
 import Navbar from "./Navbar";
 import PageHero from "./PageHero";
+import Product from "./Product";
 import Services from "./Services";
 import Sidebar from "./Sidebar";
 
@@ -18,4 +19,5 @@ export {
   Hero,
   FeaturedProducts,
   Services,
+  Product,
 };
